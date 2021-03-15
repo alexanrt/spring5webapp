@@ -30,6 +30,8 @@ public class BoostrapData implements CommandLineRunner {
         publisher.setCity("St Petersburg");
         publisher.setState("FL");
 
+        publisherRepository.save(publisher);
+
 
 
 
@@ -50,6 +52,7 @@ public class BoostrapData implements CommandLineRunner {
         Book noEJB = new Book("J2EE Development with EJB", "333434124");
         rod.getBooks().add(noEJB);
         noEJB.getAuthors().add(rod);
+        noEJB.setPublisher(publisher);
 
         authorRepository.save(rod);
         bookRepository.save(noEJB);
